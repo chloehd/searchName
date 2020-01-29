@@ -1,0 +1,20 @@
+body {
+  margin: 1%;
+  background-color: goldenrod;
+}
+
+.results {
+  background-color: lightblue;
+  width: 206px;
+}
+
+.searchBar {
+  width: 200px;
+}
+
+.p-results {
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}

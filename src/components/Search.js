@@ -26,14 +26,25 @@ class Search extends Component {
     });
 
     return (
-      <div className="searchBar">
+      <div className="search">
         <form>
-          <input type="text" value={userInput} onChange={this.onChange} />
+          <input
+            className="searchBar"
+            type="text"
+            value={userInput}
+            onChange={this.onChange}
+            placeholder="Type a name..."
+          />
         </form>
         <div className="results">
           {userInput &&
             orderedList.map(oneName => {
-              return <p key={oneName.id}> {oneName.name}</p>;
+              return (
+                <p className="p-results" key={oneName.id}>
+                  {" "}
+                  {oneName.name}
+                </p>
+              );
             })}
         </div>
       </div>
