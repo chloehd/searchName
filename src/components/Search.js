@@ -17,28 +17,24 @@ class Search extends Component {
 
   render() {
     const { list } = this.props;
+    const { userInput } = this.state;
 
     const orderedList = list.filter(dataFilter => {
       return (
-        dataFilter.name
-          .toLowerCase()
-          .indexOf(this.state.userInput.toLowerCase()) !== -1
+        dataFilter.name.toLowerCase().indexOf(userInput.toLowerCase()) !== -1
       );
     });
 
     return (
       <div className="searchBar">
         <form>
-          <input
-            type="text"
-            value={this.state.userInput}
-            onChange={this.onChange}
-          />
+          <input type="text" value={userInput} onChange={this.onChange} />
         </form>
         <div className="results">
-          {orderedList.map(oneName => {
-            return <p key={oneName.id}> {oneName.name}</p>;
-          })}
+          {userInput &&
+            orderedList.map(oneName => {
+              return <p key={oneName.id}> {oneName.name}</p>;
+            })}
         </div>
       </div>
     );
